@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card text-bg-light p-3">
+        <div class="card-body">
+          <h1 id="display-city">Kyiv</h1>
+          <h1 id="current-time">16th of September</h1>
+          <form id="current-city">
+            <input type="text" placeholder="Change city" id="entered-city"/>
+            <input type="submit" value="Go!" />
+            </form>
+          <form id="current-location">
+          <input type="submit" value="My location" />
+          </form>
+          <div class="row currentCity">
+            
+            <div class="col-6">
+              <h5>
+                <span id="currentTemp">17°</span>
+                <a href="#" id="toCelsius">C</a>
+                
+              </h5>
+            </div>
+            <div class="col-6">
+              <div class="row" id="currentHumidity"><h5>Humidity 55%</h5></div>
+              <div class="row" id="currentWind"><h5>Wind 10 km/h</h5></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

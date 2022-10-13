@@ -1,0 +1,19 @@
+div.card {
+  margin-top: 20px;
+}
+div.currentCity {
+  margin-top: 10px;
+}
+div.otherDays {
+  margin-top: 20px;
+}
+#mainEmoji {
+  font-size: 60px;
+}
+#otherEmoji {
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
