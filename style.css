@@ -46,3 +46,9 @@ a {
   top: 0px;
   left: 5px;
 }
+#fahrenheit-link {
+  text-decoration: none;
+}
+#celsius-link {
+  text-decoration: none;
+}

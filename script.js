@@ -18,6 +18,8 @@ if (minutes < 10) {
   currentTime.innerHTML = weekDay[day] + ", " + hours + ":" + minutes;
 }
 
+let celsiusTemp = 17;
+
 function currentCity(event) {
   event.preventDefault();
   let city = document.querySelector("#entered-city");
@@ -49,6 +51,8 @@ function currentCity(event) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+
+    celsiusTemp = response.data.main.temp;
   }
   axios.get(apiURL).then(showTemp);
 }
@@ -93,6 +97,8 @@ function locationCity(event) {
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
+
+      celsiusTemp = response.data.main.temp;
     }
     axios.get(apiURL).then(showTemp);
   }
@@ -100,3 +106,22 @@ function locationCity(event) {
 }
 let locationForm = document.querySelector("#current-location");
 locationForm.addEventListener("submit", locationCity);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp) + "°";
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp) + "°";
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
