@@ -33,8 +33,6 @@ function currentCity(event) {
   console.log(apiURL);
 
   function showTemp(response) {
-    console.log(response.data);
-    console.log(response.data.main.temp);
     let temp = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#currentTemp");
     currentTemp.innerHTML = temp + "°";
@@ -44,7 +42,8 @@ function currentCity(event) {
     let wind = Math.round(response.data.wind.speed);
     currentWind = document.querySelector("#currentWind");
     currentWind.innerHTML = "Wind: " + wind + " km/h";
-
+    let currentWeatherDesc = document.querySelector("#current-weather-desc");
+    currentWeatherDesc.innerHTML = response.data.weather[0].main;
     let currentIcon = document.querySelector("#icon");
     currentIcon.setAttribute(
       "src",
@@ -75,8 +74,6 @@ function locationCity(event) {
     console.log(apiURL);
 
     function showTemp(response) {
-      console.log(response.data);
-      console.log(response.data.main.temp);
       let temp = Math.round(response.data.main.temp);
       let currentTemp = document.querySelector("#currentTemp");
       currentTemp.innerHTML = temp + "°";
@@ -89,6 +86,8 @@ function locationCity(event) {
       let city = response.data.name;
       let displayCity = document.querySelector("#display-city");
       displayCity.innerHTML = city;
+      let currentWeatherDesc = document.querySelector("#current-weather-desc");
+      currentWeatherDesc.innerHTML = response.data.weather[0].main;
       let currentIcon = document.querySelector("#icon");
       currentIcon.setAttribute(
         "src",

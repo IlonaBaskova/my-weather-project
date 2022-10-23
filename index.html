@@ -19,8 +19,9 @@
         <div class="card-body">
           <h1 id="display-city">Kyiv</h1>
           <h1 id="current-time">16th of September</h1>
+          <h1 id="current-weather-desc">Partly cloudy</h1>
           <form id="current-city">
-            <input type="text" placeholder="Change city" id="entered-city"/>
+            <input type="text" placeholder="Change city" id="entered-city" autocomplete="off"/>
             <input type="submit" value="Go!" />
             </form>
           <form id="current-location">
@@ -29,7 +30,7 @@
           <div class="row currentCity">
             
             <div class="col-6 d-flex weather-temp">
-              <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="Crear" id="icon">
+              <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Partly cloudy" id="icon">
               
                 <span id="currentTemp">17°</span>
                 <span id="cel-to-fr">C|F</span>
