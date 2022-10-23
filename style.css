@@ -1,11 +1,38 @@
+div.container {
+  color: #878787;
+}
 div.card {
   margin-top: 20px;
 }
 div.currentCity {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 div.otherDays {
   margin-top: 20px;
+}
+a {
+  color: blueviolet;
+}
+.weather-temp img {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+  border-color: blue;
+}
+
+#author {
+  text-align: center;
+  margin: auto;
+}
+#current-location {
+  display: inline;
+}
+#current-city {
+  display: inline;
+}
+#currentTemp {
+  font-size: 32px;
+  line-height: 1;
 }
 #mainEmoji {
   font-size: 60px;
@@ -13,10 +40,9 @@ div.otherDays {
 #otherEmoji {
   font-size: 30px;
 }
-a {
-  color: blueviolet;
-}
-#author {
-  text-align: center;
-  margin: auto;
+#cel-to-fr {
+  font-size: 16px;
+  position: relative;
+  top: 0px;
+  left: 5px;
 }
