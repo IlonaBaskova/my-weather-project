@@ -20,6 +20,27 @@ if (minutes < 10) {
 
 let celsiusTemp = 17;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img src="https://ssl.gstatic.com/onebox/weather/48/cloudy.png" alt="Cloudy" width="42px">
+                <div class="weather-forecast-temp">
+                  <span class="weather-forecast-temp-max">17°</span> 
+                  <span class="weather-forecast-temp-min">10°</span>
+                </div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
+
 function currentCity(event) {
   event.preventDefault();
   let city = document.querySelector("#entered-city");
