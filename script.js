@@ -20,7 +20,8 @@ if (minutes < 10) {
 
 let celsiusTemp = 17;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -39,7 +40,14 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
 
 function currentCity(event) {
   event.preventDefault();
@@ -74,6 +82,8 @@ function currentCity(event) {
     );
 
     celsiusTemp = response.data.main.temp;
+
+    getForecast(response.data.coord);
   }
   axios.get(apiURL).then(showTemp);
 }
