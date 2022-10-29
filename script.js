@@ -69,6 +69,12 @@ function getForecast(coordinates) {
   axios.get(apiURL).then(displayForecast);
 }
 
+let coordinatesKyiv = {
+  lat: 50.4333,
+  lon: 30.5234,
+};
+getForecast(coordinatesKyiv);
+
 function currentCity(event) {
   event.preventDefault();
   let city = document.querySelector("#entered-city");

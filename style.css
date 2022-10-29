@@ -41,18 +41,6 @@ a {
 #otherEmoji {
   font-size: 30px;
 }
-#cel-to-fr {
-  font-size: 16px;
-  position: relative;
-  top: 0px;
-  left: 5px;
-}
-#fahrenheit-link {
-  text-decoration: none;
-}
-#celsius-link {
-  text-decoration: none;
-}
 .weather-forecast {
   margin: 20px;
   text-align: center;
