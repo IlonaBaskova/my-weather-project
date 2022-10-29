@@ -150,6 +150,7 @@ function locationCity(event) {
       );
 
       celsiusTemp = response.data.main.temp;
+      getForecast(response.data.coord);
     }
     axios.get(apiURL).then(showTemp);
   }
